@@ -1,0 +1,538 @@
+:root {
+    --bg: #131516;
+    --grey: #747069;
+    --light-grey: #d0ccc5;
+    --dark-grey: #1b1e1f;
+    --darkest: #000;
+    --light-blue: #0c72b7; 
+    --dark-blue: #06395c;
+    --pink: rgb(233, 77, 103)
+}
+
+/*#region Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 17.5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #2c2c2c; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #4f4f4f; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5f5f5f; 
+  }
+
+
+/*#endregion */
+
+body {
+    background: var(--bg);
+    margin: 0 auto;
+    display: flex;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    color: var(--light-grey);
+}
+
+main {
+    margin: 0 auto;
+    display: flex;
+}
+
+
+#main-section {
+    height: 100%;
+    min-height: 100vh;
+    width: 600px;
+    background: var(--darkest);
+    border: var(--grey) solid 1px;
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+}
+
+#main-section > div {
+    border-bottom: 1px solid var(--grey);
+}
+
+#nav {
+    margin-right: 10px;
+    display: flex;
+    align-items: top;
+    position: sticky;
+    top: 0;
+    height: 100vh; 
+}
+
+#items div:first-child i {
+    font-size: 35px !important;
+}
+#nav i {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 25px !important;
+    height: 40px;
+    width: 40px;
+    color: var(--light-grey) !important;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+ #main-header, #tweet-header {
+    color: var(--light-grey);
+    margin: 0 auto;
+    padding: 10px 20px;
+    padding-bottom: 0;
+    box-sizing: border-box;
+}
+
+#profile {
+    vertical-align: bottom;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.profile-img {
+    border-radius: 50px;
+    width: 45px;
+}
+
+
+/* -------------------------- */
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+#main-header > div {
+    box-sizing: border-box;
+}
+
+#main-header #selected {
+    color: var(--light-grey);
+    border-bottom: solid 4px var(--light-blue);
+}
+
+#main-header a {
+    font-weight: bold;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: var(--grey);
+    margin: 0 15px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/*#region Create Post */
+
+#create-post {
+    padding-top: 15px;
+}
+
+#create-post > div:first-child {
+    padding: 0 20px 10px 20px;
+    display: flex;
+    flex-flow: nowrap;
+}
+
+#create-post > div:first-child > div {
+    padding-left: 15px;
+}
+
+#create-post > div:first-child > div div:last-child i {
+    color: var(--light-blue);
+}
+
+#create-post textarea {
+    background: none;
+    border: none; 
+    resize: none;
+    color: var(--light-grey);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    width: 100%; 
+}
+#create-post textarea::placeholder {
+    color: var(--grey);
+}
+#create-post textarea:focus {
+    outline:none; 
+}
+
+#create-post > div:last-child {
+    text-align: center;
+    border-top: 1px solid var(--dark-grey);
+    color: var(--light-blue);
+    padding: 15px 0;
+    font-size: 18px;
+}
+
+#create-post-right {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#create-post-bottom {
+    position: relative;
+    display: flex;
+    border-top: 1px solid var(--dark-grey);
+    padding-top: 15px;
+    justify-content: space-between;
+}
+#create-post-bottom > div:first-child {
+    flex: 0;
+}
+#create-post-bottom i {
+    margin-top: 50%;
+}
+#create-post-bottom > div:last-child {
+    flex: 0;
+}
+
+#create-post-bottom > div:last-child button {
+    color: white;
+    background: var(--light-blue);
+    padding: 10px 15px;
+    border-radius:20px; 
+    border:none; 
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*#endregion */
+
+#showtweets {
+    display: block;
+}
+
+.tweet:not(:last-child) {
+    border-bottom: 1px solid var(--grey);
+}
+#tweet-replica {
+    display: none;
+}
+
+/*#region Tweet */
+.tweet {
+    padding: 10px 15px;
+    display: flex;
+}
+.tweet-left {
+    padding-right: 10px;
+}
+
+.tweet-right {
+    width: 100%;
+    position: relative;
+}
+
+.tweet-top-info {
+    display: flex;
+    margin-bottom: 5px;
+}
+.tweet-name, .tweet-username, .tweet-time-divider {
+    margin-right: 5px;
+}
+.tweet-name {
+    font-weight: bold;
+}
+.tweet-username, .tweet-time-divider, .tweet-time, .tweet-more {
+    color: var(--grey);
+}
+.tweet-time-divider {
+    margin-top: -5px;
+}
+.tweet-more {
+    position: absolute;
+    right: 0;
+}
+
+.tweet-post {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.tweet-bottom-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.tweet-bottom-info > div {
+    flex: 0;
+}
+.tweet-bottom-info p {
+    visibility: hidden;
+}
+.tweet-comment, .tweet-retweet, .tweet-like, .tweet-stats, .tweet-share {
+    display: flex;
+    color:  var(--grey);
+    cursor: pointer;
+}
+.tweet-like:hover {
+    color: var(--pink); 
+}
+.tweet-share {
+    margin: 0;
+    padding: 0;
+}
+.tweet-bottom-info p {
+    margin-top: -2px;
+    margin-left: 5px;
+}
+
+/*#endregion */
+
+
+
+/*#region Full Tweet */
+
+#tweet-header {
+    display: none;
+    padding-top: 10px;
+    border-bottom:none !important; 
+}
+
+#tweet-header i {
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#tweet-header p {
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+#full-tweet {
+    padding: 15px 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    display: none;
+}
+
+#full-tweet-info {
+    display: flex;
+} 
+
+#full-tweet-profile {
+    height: 45px;
+    width: 45px;
+    margin-right: 15px;
+}
+
+#full-tweet-info-right {
+    display: flex;
+    width: 100%;
+    font-weight:lighter;
+    color: var(--grey);
+    position: relative;
+}
+
+#full-tweet-name {
+    position: absolute;
+    left: 0;
+    top: -17.5px;
+    color: var(--light-grey);
+    font-weight: bolder;
+}
+
+#full-tweet-username {
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+}
+
+#full-tweet-more {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#full-tweet-date-time {
+    color: var(--grey);
+    display: flex;
+    margin-top: -10px;
+}
+
+#full-tweet-date-time .tweet-time-divider {
+    margin: 12.5px 7.5px 0 7.5px;
+}
+
+#full-tweet-statistic {
+    border-top: 1px solid var(--grey);
+    padding: 0 10px 0 10px;
+    box-sizing: border-box;
+}
+
+#full-tweet-actions {
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid var(--grey);
+    padding: 15px 30px 0 30px;
+    box-sizing: border-box;
+}
+
+#full-tweet-actions i {
+    flex: 0;
+    cursor: pointer;
+    color: var(--grey);
+}
+
+/*#endregion */
+
+
+/*#region Comment popup */
+
+#tint-overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+}
+
+#tint-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(53, 74, 82);
+    opacity: 0.5; 
+    z-index: 19; 
+}
+
+#comment-popup {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translate(-50%, 0);
+    width: 600px;
+    height: 350px;
+    background: var(--darkest);
+    z-index: 20;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+#comment-popup-top {
+    width: 100%;
+    display: flex;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#comment-popup-tweet {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    height: auto;
+}
+#comment-popup-tweet-left {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin-right: 10px;
+}
+
+#comment-popup-tweet-profile {
+    width: 50px; 
+    height: 50px; 
+}
+
+#comment-popup-line {
+    flex-grow: 1; 
+    width: 2px;
+    background-color: var(--dark-grey); 
+    margin-top: 10px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+  
+#comment-popup-tweet-right {
+    width: 100%;
+}
+
+#comment-popup-tweet-info  {
+    display: flex;
+    margin-top: -15px
+}
+
+#comment-popup-name {
+    font-weight: bold;
+}
+
+#comment-popup-username, #comment-popup-divider, #comment-popup-time {
+    color: var(--grey);
+    margin-left: 5px;
+}
+
+#comment-popup-divider {
+    margin-top:12.5px;
+}
+
+#comment-popup-content {
+    margin-top: -10px;
+}
+
+#comment-popup-replying-to {
+    display: flex;
+}
+#comment-popup-replying-to p {
+    color: var(--grey);
+    margin-right: 5px;
+}
+#comment-popup-replying-to a {
+    margin-top: 15px;
+    color: var(--light-blue);
+}
+
+#comment-popup-top i, #comment-popup button, #comment-popup a {
+    cursor: pointer;
+}
+
+#comment-popup textarea {
+    outline: none;
+    background: none;
+    color: var(--light-grey);
+    border: none;
+    resize: none;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+#comment-popup textarea::placeholder {
+    font-size: 18px;
+}
+
+#comment-popup button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: var(--light-blue);
+    color: white;
+    font-weight: bold;
+    padding: 10px 17.5px;
+    border-radius: 20px;
+    border: none;
+}
+
+/*#endregion */

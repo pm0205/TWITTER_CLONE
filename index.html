@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <link rel="icon" href="logo.png">
+    <script src="https://kit.fontawesome.com/4ce1eac851.js" crossorigin="anonymous"></script>
+    <title>Home / Twitter</title>
+</head>
+<body>
+    <div id="tint-overlay"></div>
+
+    <main>
+        <section id="nav">
+            <div id="items">
+                <div>
+                    <a href="index.html">
+                        <i class="fa fa-solid fa-twitter" aria-hidden="true"></i>  
+                    </a>
+                </div>
+                <div>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                </div>
+            </div>
+            <div id="profile">
+                <a href="index.html"><img src="profile.png" class="profile-img"></a>
+            </div>
+        </section>
+
+        <div id="comment-popup">
+            <div id="comment-popup-top">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div id="comment-popup-tweet">
+                <div id="comment-popup-tweet-left">
+                    <img src="profile.png" id="comment-popup-tweet-profile" class="profile-img">
+                    <div id="comment-popup-line"></div>
+                </div>
+                <div id="comment-popup-tweet-right">
+                    <div id="comment-popup-tweet-info">
+                        <p id="comment-popup-name">[name]</p>
+                        <p id="comment-popup-username">[username]</p>
+                        <div class="tweet-time-divider" id="comment-popup-divider">.</div>
+                        <p id="comment-popup-time">[time]</p>
+                    </div>
+                    <div id="comment-popup-content">
+                        <p>[content]</p>
+                    </div>
+                    <div id="comment-popup-replying-to">
+                        <p>Replying to </p><a>[user]</a>
+                    </div>
+                </div>
+            </div>
+            <div id="comment-popup-own">
+                <img src="profile.png" id="comment-popup-profile" class="profile-img">
+                <textarea placeholder="Post your reply!"></textarea>
+            </div>
+            <div id="comment-popup-bottom">
+                <button>Reply</button>
+            </div>
+        </div>
+
+        <section id="main-section">
+            <div id="main-header">
+                <h1>Home</h1>
+                <div>
+                    <a id="selected">For you</a>
+                    <a>Following</a>
+                </div>
+            </div>
+            <div id="tweet-header">
+                <i class="fa-solid fa-arrow-left"></i>
+                <p>Post</p>
+            </div>
+
+            <div id="full-tweet">
+                <div id="full-tweet-info">
+                    <img src="profile.png" id="full-tweet-profile" class="profile-img">
+                    <div id="full-tweet-info-right">
+                        <p id="full-tweet-name">[name]</p>
+                        <p id="full-tweet-username">[username]</p>
+                        <i class="fa-solid fa-ellipsis" id="full-tweet-more"></i>
+                    </div>
+                </div>
+                    <div id="full-tweet-content">
+                        <p>[content]</p>
+                    </div>
+                    <div id="full-tweet-date-time">
+                        <p id="full-tweet-time">0:00 PM</p>
+                        <div class="tweet-time-divider">.</div>
+                        <p id="full-tweet-date">Jan 1, 2000</p>
+                    </div>
+                    <div id="full-tweet-statistic">
+                    <p id="full-tweet-likes"></p>
+                    </div>
+                    <div id="full-tweet-actions">
+                        <i class="fa-regular fa-comment" id="full-tweet-comment-icon"></i>
+                        <i class="fa-solid fa-repeat" id="full-tweet-retweet-icon"></i>
+                        <i class="fa-regular fa-heart" id="full-tweet-likes-icon"></i>
+                        <i class="fa-regular fa-bookmark" id="full-tweet-bookmark-icon"></i>
+                        <i class="fa-solid fa-arrow-up-from-bracket" id="full-tweet-share-icon"></i>
+                    </div>
+            </div>
+            <div id="full-tweet-comments">
+            </div>
+
+            <div id="create-post">
+                <div>
+                    <a href="home.html"><img src="profile.png" class="profile-img"></a>
+                    <div id="create-post-right">
+                        <div>
+                            <textarea placeholder="What is happening?!" id="textareaPost"></textarea>
+                        </div>
+                        <div id="create-post-bottom">
+                            <div>
+                                <i class="fa-regular fa-image"></i>
+                            </div>
+                            <div>
+                                <button id="postButton">Post</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="showtweets">Show 2 Tweets</div>
+            </div>
+
+            <div id="tweets">
+                <div class="tweet" id="tweet-replica">
+                    <div class="tweet-left">
+                        <a href="home.html"><img src="profile.png" class="profile-img"></a>
+                    </div>
+                    <div class="tweet-right">
+                        <div class="tweet-top-info">
+                            <div class="tweet-name">lallice</div>
+                            <div class="tweet-username">@alice</div>
+                            <div class="tweet-time-divider">.</div>
+                            <div class="tweet-time">Now</div>
+                            <i class="fa-solid fa-ellipsis tweet-more"></i>
+                        </div>
+                        <div class="tweet-post">
+                            hi this is a test tweet
+                        </div>
+                        <div class="tweet-bottom-info">
+                            <div class="tweet-comment">
+                                <i class="fa-regular fa-comment"></i>
+                                <p>0</p>
+                            </div>
+                            <div class="tweet-retweet">
+                                <i class="fa-solid fa-repeat"></i>
+                                <p>0</p>
+                            </div>
+                            <div class="tweet-like">
+                                <i class="fa-regular fa-heart"></i>
+                                <p>0</p>
+                            </div>
+                            <div class="tweet-stats">
+                                <i class="fa-solid fa-signal"></i>
+                                <p>0</p>
+                            </div>
+                            <div class="tweet-share">
+                                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
